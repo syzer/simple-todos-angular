@@ -13,10 +13,11 @@ if (Meteor.isClient) {
         angular.bootstrap(document, ['simple-todos']);
     }
 
-    if (Meteor.isCordova)
+    if (Meteor.isCordova) {
         angular.element(document).on('deviceready', onReady);
-    else
+    } else {
         angular.element(document).ready(onReady);
+    }
 
     angular.module('simple-todos').controller('TodosListCtrl', ['$scope', '$meteor',
         function ($scope, $meteor) {
